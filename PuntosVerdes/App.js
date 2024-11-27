@@ -1,38 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Image } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import PaginaPrincipal from './screens/PaginaPrincipal';
 
-export default function PuntosVerdesScreen() {
-  const [puntos, setPuntos] = useState([]);
+const Stack=createNativeStackNavigator();
 
-  useEffect(() => {
-    // Simulación de datos. Luego puedes reemplazar esto con una API.
-    const puntosMock = [
-      { id: '1', nombre: 'Punto Verde 1', direccion: 'Calle Falsa 123' },
-      { id: '2', nombre: 'Punto Verde 2', direccion: 'Av. Verde 456' },
-    ];
-    setPuntos(puntosMock);
-  }, []);
+export default function App() {
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Puntos Verdes</Text>
-      <FlatList
-        data={puntos}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View style={styles.item}>
-            <Text style={styles.itemText}>{item.nombre}</Text>
-            <Text style={styles.itemText}>{item.direccion}</Text>
-          </View>
-        )}
-      />
-    </View>
-  );
+  <NavigationContainer>
+    <Stack.Navigator initialRouteName="PaginaPrincipal">
+      <Stack.Screen name="PaginaPrincipal" component={PaginaPrincipal}/>
+    </Stack.Navigator>
+  </NavigationContainer>
+);
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20 },
-  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
-  item: { padding: 10, borderBottomWidth: 1, borderColor: '#ccc' },
-  itemText: { fontSize: 18 },
-});
