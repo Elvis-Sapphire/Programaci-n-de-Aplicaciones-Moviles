@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, Image } from 'react-native';
 
-export default function IniciarSecion() {
+export default function Ubicaciones() {
     return(
         <View style={styles.Container}>
             <Text>
-                Bienvenido/a
+                Mapa de Puntos Verdes
             </Text>
         </View>
     )

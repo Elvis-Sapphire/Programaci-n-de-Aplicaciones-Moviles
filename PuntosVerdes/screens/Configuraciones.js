@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, Image } from 'react-native';
 
-export default function IniciarSecion() {
+export default function Configuraciones() {
     return(
         <View style={styles.Container}>
             <Text>
-                Bienvenido/a
+                Configuración Principal
             </Text>
         </View>
     )

@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, Image } from 'react-native';
 
-export default function IniciarSecion() {
+export default function Notificaciones() {
     return(
-        <View style={styles.Container}>
+        <View>
             <Text>
-                Bienvenido/a
+                Notificaciones
             </Text>
         </View>
     )
 }
-
 const styles=StyleSheet.create({
     Container:{
         width: "100%",
