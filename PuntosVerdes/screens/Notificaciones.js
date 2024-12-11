@@ -3,9 +3,9 @@ import { View, Text, FlatList, StyleSheet, Image } from 'react-native';
 
 export default function Notificaciones() {
     return(
-        <View>
+        <View style={styles.Container}>
             <Text>
-                Notificaciones
+                No hay Notificaciones disponibles
             </Text>
         </View>
     )
